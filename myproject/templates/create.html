@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee Details</title>
+  <link rel="stylesheet" href="{% static 'cre.css' %}">
+</head>
+<body>
+  <h1>Employee Create</h1>
+  <form name="register" method="POST" action="../details/">
+    {% csrf_token %}
+    <label for="employeeID">Employee ID:</label>
+    <input type="text" name="employeeID" value=""><br>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" value=""><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" value="" ><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" value=""><br>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" name="phoneNumber" value=""><br>
+
+    <label for="jobID">Job ID:</label>
+    <input type="text" name="jobID" value=""><br>
+
+    <label for="salary">Salary:</label>
+    <input type="number" name="salary" value="" ><br>
+    
+    <input type="submit" value="submit"  width="300" height="100">
+  </form>
+</body>
+</html>

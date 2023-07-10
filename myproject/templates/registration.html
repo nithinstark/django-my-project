@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Employee List Page</title>
+    <link rel="stylesheet" href="{% static 'se.css' %}">
+  </head> 
+    <body>
+      <div class="center">
+      <h1> Employee List </h1>
+      </div>
+      <br/>
+      <form>
+      <table border="1">
+        <tr>
+          <th>employee_id</th>
+          <th>first_name</th>
+          <th>Last_name</th>
+          <th>Email</th>
+          <th>Phone_number</th>
+          <th>Job_id</th>
+          <th>Salary</th>
+        </tr>
+      {% for employee in employees %}
+      <tr>
+        <td>{{employee.employee_id}}</td>
+        <td>{{employee.first_name}}</td>
+        <td>{{employee.last_name}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phone_number}}</td>
+        <td>{{employee.job_id}}</td>
+        <td>{{employee.salary}}</td>
+      {% endfor %}
+      </tr>
+      </table>
+      </form>
+      <div class="center-button">
+        <a href="/create/create"><button type="button" name="Create">Create</button></br></br></br></a>
+      </div>
+    </body>
+</html>
